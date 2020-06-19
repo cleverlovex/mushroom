@@ -1,0 +1,47 @@
+<view id="home-base">
+  <!-- 搜素栏 -->
+  <view class="search-icon">
+    <image src="/assets/images/search_icon@2x.png"></image>
+    <text>请输入课程的名称</text>
+  </view>
+
+  <!-- 轮播图 -->
+	<swiper autoplay circular indicator-dots>
+		<navigator url="" wx:for="{{swiperList}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item.img_url}}" wx:key="*this"></image>
+			</swiper-item>
+		</navigator>
+	</swiper>
+
+  <!-- 推荐课程 -->
+  <view>
+    <view class="title">
+      <text class="title-text">推荐课程</text>
+      <image src="/assets/images/arrow@2x.png"></image>
+    </view>
+    <scroll-view scroll-x class="recommend-course">
+			<navigator class="recommend-course-item" wx:for="{{courseList}}" wx:key="id">
+				<image src="{{item.icon}}" alt=""/>
+			</navigator>
+		</scroll-view>
+  </view>
+
+  <!-- 推荐视频 -->
+  <view>
+		<view class="title">
+			<text class="title-text">热门视频</text>
+			<image src="/assets/images/arrow@2x.png" alt="" />
+		</view>
+		<view class="hot-video">
+			<navigator url="" class="video-item" wx:for="{{videoList}}" wx:key="id">
+				<image src="{{item.cover_photo_url}}" alt="" />
+				<text class="title">{{item.name}}</text>
+				<text class="subtitle">{{item.view_count}}人已观看</text>
+			</navigator>
+		</view>
+	</view>
+
+
+</view>
+
